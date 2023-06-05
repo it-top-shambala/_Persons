@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractName {
+# name : string
++ {abstract} GetFullName() : string
+}
+
+AbstractName <|-- RussianName
+class RussianName {
+- family : string
+- patronymic : string
+
++ RussianName(family : string, name : string, patronymic : string)
+
++ GetFullName() : string
+}
+
+AbstractName <|-- EuropeName
+class EuropeName {
+- second_name : string
+- last_name : string
+
++ EuropeName(name : string, second_name : string, last_name : string)
+
++ GetFullName() : string
+}
+
+abstract class AbstractAddress {
++ {abstract} to_string() : string
+}
+
+AbstractAddress <|-- RussianAddress
+class RussianAddress {
+- index : int
+- region : string
+- district : string
+- locality : string
+
++ RussianAddress(index : int, region : string, district : string, locality : string)
+
++ to_string() : string
+}
+
+class Phone {
+- country : int
+- operator : int
+- number : int
+
++ Phone(country : int, operator : int, number : int)
+
++ to_string() : string
+}
+
+AbstractName <--* Person
+AbstractAddress <--* Person
+Phone <--* Person
+class Person {
+- name : AbstractName
+- address : AbstractAddress
+- phone : Phone
+
++ Person(name : AbstractName, address : AbstractAddress, phone : Phone)
+}
+
+@enduml
