@@ -27,7 +27,7 @@ class EuropeName {
 }
 
 abstract class AbstractAddress {
-+ {abstract} to_string() : string
++ {abstract} ToString() : string
 }
 
 AbstractAddress <|-- RussianAddress
@@ -39,7 +39,7 @@ class RussianAddress {
 
 + RussianAddress(index : int, region : string, district : string, locality : string)
 
-+ to_string() : string
++ ToString() : string
 }
 
 class Phone {
@@ -49,7 +49,7 @@ class Phone {
 
 + Phone(country : int, operator : int, number : int)
 
-+ to_string() : string
++ ToString() : string
 }
 
 AbstractName <--* Person

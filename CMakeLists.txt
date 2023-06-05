@@ -3,4 +3,4 @@ project(Persons)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Persons main.cpp)
+add_executable(Persons main.cpp lib/AbstractName.h lib/AbstractAddress.h lib/Phone.h lib/Person.h lib/names/RussianName.h lib/names/EuropeName.h lib/addresses/RussianAddress.h)
